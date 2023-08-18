@@ -29,7 +29,7 @@ public class RevenueCalculatorService : Interfaces.IRevenueCalculatorService
 		return new RevenueDTO()
 		{
 			Gross = revenue,
-			Net = revenue - (revenue * taxRate)
+			Net = revenue - ((revenue - investmentDTO.Investment) * taxRate)
 		};
 	}
 }
