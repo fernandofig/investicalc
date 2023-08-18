@@ -1,3 +1,4 @@
+using FluentValidation;
 using FluentValidation.AspNetCore;
 using InvestmentCalculator.Infrastructure.Interfaces;
 using InvestmentCalculator.Infrastructure.MappingProfiles;
@@ -15,6 +16,7 @@ builder.Services.AddControllers();
 
 builder.Services
     .AddFluentValidationAutoValidation()
+    .AddValidatorsFromAssemblyContaining<Program>()
     .AddFluentValidationClientsideAdapters();
 
 builder.Services.AddEndpointsApiExplorer();

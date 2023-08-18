@@ -29,7 +29,6 @@ public class RevenueController : ControllerBase
         if (revenueDTO == null)
             return StatusCode(StatusCodes.Status500InternalServerError);
 
-
         var revenueResp = _mapper.Map<RevenueResponse>(revenueDTO);
 
         return Ok(revenueResp);
