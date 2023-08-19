@@ -6,7 +6,6 @@ using InvestmentCalculator.Infrastructure.Providers;
 using InvestmentCalculator.Services;
 using InvestmentCalculator.Services.Interfaces;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddTransient<IRevenueCalculatorService, RevenueCalculatorService>();
@@ -19,10 +18,10 @@ builder.Services
     .AddValidatorsFromAssemblyContaining<Program>()
     .AddFluentValidationClientsideAdapters();
 
+builder.Services.AddAutoMapper(m => m.AddProfile<DataContractsMapping>());
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddAutoMapper(m => m.AddProfile<DataContractsMapping>());
 
 var app = builder.Build();
 
@@ -31,7 +30,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

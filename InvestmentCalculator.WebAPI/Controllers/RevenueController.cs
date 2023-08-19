@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace InvestmentCalculator.WebAPI.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class RevenueController : ControllerBase
 {
     private readonly IMapper _mapper;
-	private readonly IRevenueCalculatorService _revenueCalculatorService;
+    private readonly IRevenueCalculatorService _revenueCalculatorService;
 
 	public RevenueController(IMapper mapper, IRevenueCalculatorService revenueCalculatorService)
     {
