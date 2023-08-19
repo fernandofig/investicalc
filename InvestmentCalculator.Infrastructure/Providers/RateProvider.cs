@@ -5,7 +5,7 @@ namespace InvestmentCalculator.Infrastructure.Providers;
 
 public class RateProvider : IRateProvider
 {
-	public decimal GetRate(RateType type, int monthsPeriod)
+	public decimal GetRate(RateType type, uint monthsPeriod)
 	{
 		// Aqui poderia ser substituído por alguma lógica para obter a informação através de algum outro serviço ou store
 		return type switch

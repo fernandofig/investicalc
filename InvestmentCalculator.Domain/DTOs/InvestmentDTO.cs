@@ -4,5 +4,5 @@ public class InvestmentDTO
 {
 	public decimal Investment { get; set; }
 
-	public int Months { get; set; }
+	public uint Months { get; set; }
 }

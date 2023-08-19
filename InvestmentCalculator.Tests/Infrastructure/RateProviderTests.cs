@@ -33,7 +33,7 @@ public class RateProviderTests
 	[AutoInlineData(25, 0.15)]
 	[AutoInlineData(999, 0.15)]
 	public void GetRate_ForVAT_Should_Return_Correct_Rate_According_To_Period(
-        int months,
+        uint months,
         decimal expectedRate,
 	    RateProvider sut)
     {

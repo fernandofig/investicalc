@@ -4,5 +4,5 @@ namespace InvestmentCalculator.Infrastructure.Interfaces;
 
 public interface IRateProvider
 {
-	decimal GetRate(RateType type, int monthsPeriod);
+	decimal GetRate(RateType type, uint monthsPeriod);
 }

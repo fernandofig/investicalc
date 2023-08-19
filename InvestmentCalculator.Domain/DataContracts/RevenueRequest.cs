@@ -4,5 +4,5 @@ public class RevenueRequest
 {
 	public decimal Investment { get; set; }
 
-	public int Months { get; set; }
+	public uint Months { get; set; }
 }
