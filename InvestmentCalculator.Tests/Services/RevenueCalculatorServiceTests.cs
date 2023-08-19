@@ -26,9 +26,9 @@ public class RevenueCalculatorServiceTests
 	public void CalculateCDBRevenue_Should_Return_Populated_RevenueDTO_Object_If_No_Exceptions_Occur()
 	{
 		// Arrange
-		var investmentDTO = new InvestmentDTO()
+		var investmentDTO = new InvestmentDto()
 		{
-			Investment = 20000,
+			Amount = 20000,
 			Months = 3
 		};
 
@@ -40,19 +40,19 @@ public class RevenueCalculatorServiceTests
 		var result = _sut.CalculateCDBRevenue(investmentDTO);
 		
 		// Assert
-		result.Should().BeOfType<RevenueDTO>();
+		result.Should().BeOfType<RevenueDto>();
 		result.Should().NotBeNull();
-		result.Gross.Should().Be(investmentDTO.Investment);
-		result.Net.Should().Be(investmentDTO.Investment);
+		result.Gross.Should().Be(investmentDTO.Amount);
+		result.Net.Should().Be(investmentDTO.Amount);
 	}
 
 	[Fact]
 	public void CalculateCDBRevenue_Should_Return_Null_RevenueDTO_Object_If_Exceptions_Occur()
 	{
 		// Arrange
-		var investmentDTO = new InvestmentDTO()
+		var investmentDTO = new InvestmentDto()
 		{
-			Investment = 20000,
+			Amount = 20000,
 			Months = 3
 		};
 

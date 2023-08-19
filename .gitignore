@@ -20,13 +20,13 @@ Thumbs.db
 # Angular
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+dist/
+tmp/
+out-tsc/
+bazel-out/
 
 # Node
-/node_modules
+node_modules/
 npm-debug.log
 yarn-error.log
 
@@ -45,7 +45,6 @@ yarn-error.log
 # Miscellaneous
 .angular/
 .sass-cache/
-node_modules/
 /connect.lock
 /coverage
 /libpeerconnection.log

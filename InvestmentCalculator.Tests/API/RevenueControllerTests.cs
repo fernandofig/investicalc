@@ -26,13 +26,13 @@ public class RevenueControllerTests
 	[Theory, AutoNSubstituteData]
 	public void GetCDBRevenue_Should_Return_200_When_Service_Method_Returns_NonNull_Object(
 		RevenueRequest request,
-		InvestmentDTO investmentDTO,
-		RevenueDTO revenueDTO,
+		InvestmentDto investmentDTO,
+		RevenueDto revenueDTO,
 		RevenueResponse response
 		)
 	{
 		// Arrange
-		_mockMapper.Map<InvestmentDTO>(request).Returns(investmentDTO);
+		_mockMapper.Map<InvestmentDto>(request).Returns(investmentDTO);
 		_mockRevenueCalculatorService.CalculateCDBRevenue(investmentDTO).ReturnsForAnyArgs(revenueDTO);
 		_mockMapper.Map<RevenueResponse>(revenueDTO).Returns(response);
 
@@ -48,7 +48,7 @@ public class RevenueControllerTests
 	public void GetCDBRevenue_Should_Return_500_When_Service_Method_Returns_Null_Object()
 	{
 		// Arrange
-		_mockRevenueCalculatorService.CalculateCDBRevenue(new InvestmentDTO()).ReturnsForAnyArgs((RevenueDTO)null!);
+		_mockRevenueCalculatorService.CalculateCDBRevenue(new InvestmentDto()).ReturnsForAnyArgs((RevenueDto)null!);
 
 		// Act
 		var result = _sut.GetCDBRevenue(new RevenueRequest());

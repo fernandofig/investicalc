@@ -16,9 +16,9 @@ public class RevenueCalculatorService : Interfaces.IRevenueCalculatorService
 		_logger = logger;
 	}
 
-	public RevenueDTO CalculateCDBRevenue(InvestmentDTO investmentDTO)
+	public RevenueDto CalculateCDBRevenue(InvestmentDto investmentDTO)
 	{
-		var revenue = investmentDTO.Investment;
+		var revenue = investmentDTO.Amount;
 
 		try
 		{
@@ -31,10 +31,10 @@ public class RevenueCalculatorService : Interfaces.IRevenueCalculatorService
 				revenue *= (1 + (cdiRate * tbRate));
 			}
 
-			return new RevenueDTO()
+			return new RevenueDto()
 			{
 				Gross = revenue,
-				Net = revenue - ((revenue - investmentDTO.Investment) * taxRate)
+				Net = revenue - ((revenue - investmentDTO.Amount) * taxRate)
 			};
 		}
 		catch (Exception ex)

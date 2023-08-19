@@ -4,5 +4,5 @@ namespace InvestmentCalculator.Services.Interfaces;
 
 public interface IRevenueCalculatorService
 {
-	RevenueDTO CalculateCDBRevenue(InvestmentDTO investmentDTO);
+	RevenueDto CalculateCDBRevenue(InvestmentDto investmentDTO);
 }

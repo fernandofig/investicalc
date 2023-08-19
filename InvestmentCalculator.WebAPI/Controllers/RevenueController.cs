@@ -22,7 +22,7 @@ public class RevenueController : ControllerBase
     [HttpGet]
     public IActionResult GetCDBRevenue([FromQuery] RevenueRequest request)
     {
-        var investmentDTO = _mapper.Map<InvestmentDTO>(request);
+        var investmentDTO = _mapper.Map<InvestmentDto>(request);
 
         var revenueDTO = _revenueCalculatorService.CalculateCDBRevenue(investmentDTO);
 

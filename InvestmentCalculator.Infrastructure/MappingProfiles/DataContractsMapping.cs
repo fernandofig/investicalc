@@ -8,7 +8,7 @@ public class DataContractsMapping : Profile
 {
 	public DataContractsMapping()
 	{
-		CreateMap<RevenueRequest, InvestmentDTO>();
-		CreateMap<RevenueDTO, RevenueResponse>();
+		CreateMap<RevenueRequest, InvestmentDto>();
+		CreateMap<RevenueDto, RevenueResponse>();
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace InvestmentCalculator.Domain.DTOs;
 
-public class RevenueDTO
+public class RevenueDto
 {
 	public decimal Gross { get; set; }
 

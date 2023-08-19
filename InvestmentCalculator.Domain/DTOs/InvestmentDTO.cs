@@ -1,8 +1,8 @@
 ﻿namespace InvestmentCalculator.Domain.DTOs;
 
-public class InvestmentDTO
+public class InvestmentDto
 {
-	public decimal Investment { get; set; }
+	public decimal Amount { get; set; }
 
 	public uint Months { get; set; }
 }
