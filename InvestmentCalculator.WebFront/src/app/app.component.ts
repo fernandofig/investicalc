@@ -1,26 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
+import { Investment } from './datacontracts';
+import { Revenue } from './datacontracts';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  public forecasts?: WeatherForecast[];
+  public investment?: Investment;
 
-  constructor(http: HttpClient) {
-    http.get<WeatherForecast[]>('/weatherforecast').subscribe(result => {
-      this.forecasts = result;
-    }, error => console.error(error));
-  }
+  /*constructor(http: HttpClient) {
+    http.get<WeatherForecast[]>('/weatherforecast')
+      .subscribe(
+        {
+          next: (result) => this.forecasts = result,
+          error: (err) => console.error(err)
+        });
+  }*/
 
-  title = 'angularapp';
-}
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+  title = 'investicalc';
 }

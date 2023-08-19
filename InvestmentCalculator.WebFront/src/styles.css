@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "normalize.css";
+@import "skeleton.css";
+
+html, body {
+    background-color: #393939;
+    color:white;
+}
+
+div#op-box {
+    background-color: white;
+    color: #1e1e1e;
+    border-radius: 50px;
+    box-shadow: 15px 15px 40px 0px rgba(0,0,0,0.75);
+    width: 600px;
+    padding: 30px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+}

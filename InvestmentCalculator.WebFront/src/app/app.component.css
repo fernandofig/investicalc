@@ -1,0 +1,29 @@
+label {
+  float: left;
+  margin-right: 20px;
+}
+
+input {
+  text-align: right;
+  font-weight: normal;
+}
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    margin-left: 15px;
+  }
+
+  input#amount {
+    width: 150px;
+    -moz-appearance: textfield;
+  }
+
+    input#amount::-webkit-outer-spin-button,
+    input#amount::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+  input#months {
+    width: 80px;
+  }
