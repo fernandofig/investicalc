@@ -7,7 +7,7 @@ public class RevenueRequestValidator : AbstractValidator<RevenueRequest>
 {
 	public RevenueRequestValidator()
 	{
-		RuleFor(r => r.Investment)
+		RuleFor(r => r.Amount)
 			.Must(v => v > 0)
 			.WithMessage("Deve ser informado um valor positivo para o valor do Investimento");
 

@@ -19,7 +19,7 @@ public class RevenueController : ControllerBase
         _revenueCalculatorService = revenueCalculatorService;
 	}
 
-    [HttpGet]
+    [HttpGet("CDB")]
     public IActionResult GetCDBRevenue([FromQuery] RevenueRequest request)
     {
         var investmentDTO = _mapper.Map<InvestmentDto>(request);

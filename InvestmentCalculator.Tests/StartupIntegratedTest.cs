@@ -13,7 +13,7 @@ public class StartupIntegratedTest
 		{
 			var app = new WebApplicationFactory<Program>();
 			var client = app.CreateClient();
-			await client.GetFromJsonAsync<RevenueResponse>("/api/Revenue?investment=20000&months=3");
+			await client.GetFromJsonAsync<RevenueResponse>("/api/Revenue/CDB?amount=20000&months=3");
 		});
 
 		ex.Should().BeNull();

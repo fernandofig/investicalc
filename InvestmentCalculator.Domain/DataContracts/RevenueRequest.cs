@@ -2,7 +2,7 @@
 
 public class RevenueRequest
 {
-	public decimal Investment { get; set; }
+	public decimal Amount { get; set; }
 
 	public uint Months { get; set; }
 }

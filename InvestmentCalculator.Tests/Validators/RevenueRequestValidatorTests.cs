@@ -31,7 +31,7 @@ public class RevenueRequestValidatorTests
 		RevenueRequest request)
     {
 		// Arrange
-		request.Investment = investmentValue;
+		request.Amount = investmentValue;
 		request.Months = 18;
 
 		// Act
@@ -50,7 +50,7 @@ public class RevenueRequestValidatorTests
 		RevenueRequest request)
 	{
 		// Arrange
-		request.Investment = 20000;
+		request.Amount = 20000;
 		request.Months = months;
 
 		// Act
@@ -69,14 +69,14 @@ public class RevenueRequestValidatorTests
 		RevenueRequest request)
 	{
 		// Arrange
-		request.Investment = investmentValue;
+		request.Amount = investmentValue;
 		request.Months = 18;
 
 		// Act
 		var result = _sut.TestValidate(request);
 
 		// Assert
-		result.ShouldHaveValidationErrorFor(x => x.Investment);
+		result.ShouldHaveValidationErrorFor(x => x.Amount);
 	}
 
 	[Theory]
@@ -87,7 +87,7 @@ public class RevenueRequestValidatorTests
 		RevenueRequest request)
 	{
 		// Arrange
-		request.Investment = 20000;
+		request.Amount = 20000;
 		request.Months = months;
 
 		// Act
