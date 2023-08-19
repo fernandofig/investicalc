@@ -1,9 +1,7 @@
-using InvestmentCalculator.Infrastructure.Providers;
-
-using FluentAssertions;
-using InvestmentCalculator.Tests.AutoFixture;
-using InvestmentCalculator.Infrastructure.Interfaces;
 using InvestmentCalculator.Domain.Enums;
+using InvestmentCalculator.Infrastructure.Interfaces;
+using InvestmentCalculator.Infrastructure.Providers;
+using InvestmentCalculator.Tests.AutoFixture;
 
 namespace InvestmentCalculator.Tests.Infrastructure;
 
@@ -37,14 +35,14 @@ public class RateProviderTests
         decimal expectedRate,
 	    RateProvider sut)
     {
-		var rate = sut.GetRate(Domain.Enums.RateType.VAT, months);
+		var rate = sut.GetRate(RateType.VAT, months);
 
 		rate.Should().Be(expectedRate);
     }
 
 	[Theory]
-	[AutoInlineData(RateType.CDI, 1.08)]
-	[AutoInlineData(RateType.TB, 0.009)]
+	[AutoInlineData(RateType.TB, 1.08)]
+	[AutoInlineData(RateType.CDI, 0.009)]
 	public void GetRate_ForOtherTypes_Should_Return_Fixed_Rate_According_To_Specification(
 		RateType rateType,
 		decimal expectedRate,
