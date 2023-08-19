@@ -5,6 +5,9 @@
   "projects": {
     "investicalc": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "pt"
+      },
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
@@ -27,7 +30,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "inputmask"
+            ]
           },
           "configurations": {
             "production": {

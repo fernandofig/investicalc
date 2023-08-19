@@ -14,7 +14,7 @@ input {
   }
 
   input#amount {
-    width: 150px;
+    width: 120px;
     -moz-appearance: textfield;
   }
 
@@ -26,4 +26,46 @@ input {
 
   input#months {
     width: 80px;
+  }
+
+button {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+div#result {
+  border: 1px solid #85bd33;
+  background-color: #d8ff8e;
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: #4d7304;
+}
+
+  div#result.errorResult {
+    border-color: #e13434;
+    background-color: #f3d0d0;
+    color: #ab0000;
+    font-size: 10pt;
+  }
+
+table#revenueResult {
+  margin: 0 auto;
+}
+
+  table#revenueResult td {
+    border: none;
+    padding: 5px;
+  }
+
+  table#revenueResult td:first-child {
+    text-align:right;
+  }
+
+ul#errors {
+  margin: 0 10px;
+}
+
+  ul#errors li {
+    list-style-type: disc;
+    margin: 0px;
   }

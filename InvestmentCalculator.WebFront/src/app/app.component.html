@@ -1,11 +1,31 @@
 <h3>Cálculo de Rendimento: CDB</h3>
 
-<div>
-  <label for="amount">Valor Investido: <input id="amount" placeholder="Valor" type="number" min="1"></label>
-  <label for="months">Período: <input id="months" type="number" min="2" max="1200"></label>
-  <button class="button-primary">Calcular</button>
-</div>
+<form>
+  <label for="amount">Valor Investido: <input #amount id="amount" type="text" [inputMask]="currencyInputMask" [formControl]="invAmount" min="1" lang="pt-br" required (input)="investment.amount=amount.valueAsNumber"></label>
+  <label for="months">Período (meses): <input #months id="months" type="number" [formControl]="invMonths" min="2" max="1200" pattern="[0-9]+" required (input)="investment.months=months.valueAsNumber"></label>
+  <button type="button" class="button-primary" (click)="requestCalc()">Calcular</button>
+</form>
 
-<div id="result">
+<div id="result"
+     *ngIf="revenue.gross || errorMsgs.length > 0"
+     [ngClass]="{'errorResult': errorMsgs.length > 0 }"
+     >
 
+  <table id="revenueResult" *ngIf="revenue.gross && revenue.net">
+    <tr>
+      <td>Valor de resgate Bruto:</td>
+      <td>{{revenue.gross | currency:'BRL'}}</td>
+    </tr>
+    <tr>
+      <td>Valor de resgate Líquido:</td>
+      <td>{{revenue.net | currency:'BRL'}}</td>
+    </tr>
+  </table>
+
+  <div *ngIf="errorMsgs.length > 0">
+    Erro:
+    <ul id="errors">
+      <li *ngFor="let error of errorMsgs">{{error}}</li>
+    </ul>
+  </div>
 </div>

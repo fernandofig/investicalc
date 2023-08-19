@@ -1,9 +1,9 @@
-export interface Investment {
+export interface IInvestment {
   amount: number;
   months: number;
 }
 
-export interface Revenue {
+export interface IRevenue {
   gross: number;
   net: number;
 }
