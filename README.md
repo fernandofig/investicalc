@@ -1,27 +1,27 @@
-# Angularapp
+# InvestiCalc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+Uma aplicação de exemplo ilustrando o uso de Angular com uma WebAPI ASP.NET Core / .NET 7
 
-## Development server
+## Requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* NodeJS : Baixe e instale [por aqui](https://nodejs.org/en). Para maior comodidade, certifique-se que o caminho do runtime do Node e seus utilitários (especificamente npm) estejam na variável de ambiente PATH do sistema. As instruções para preparação da aplicação Angular dependem disto.
+* Angular/CLI : Após instalado o Node, execute `npm install -g @angular/cli` em um terminal.
+* [.NET 7 SDK](https://dotnet.microsoft.com/pt-br/download/dotnet/7.0)
 
-## Code scaffolding
+## Preparando o ambiente
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Clone o repositório: `git clone git@github.com:fernandofig/investicalc.git`
+* Abra um terminal na pasta criada após clonado o repositório
+* Instale os módulos usados no front:
+```
+   cd InvestmentCalculator.WebFront
+   npm install
+```
 
-## Build
+## Rodando a aplicação em ambiente de Desenvolvimento
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Abra mais uma janela de terminal na raiz da pasta criada ao ser clonado o repositório
+* Nesta janela de terminal, execute: `dotnet run -lp https --project ./InvestmentCalculator.WebAPI/InvestmentCalculator.WebAPI.csproj`
+* Na janela de terminal anterior, que deverá estar ainda na pasta da aplicação de frontend (`InvestmentCalculator.WebFront`), execute: `ng serve`
+* A aplicação estará acessível via browser no endereço: http://localhost:4200/
+* O Swagger da WebAPI pode ser acessada no endereço https://localhost:7037/swagger/index.html
