@@ -6,7 +6,11 @@ using InvestmentCalculator.Infrastructure.Providers;
 using InvestmentCalculator.Services;
 using InvestmentCalculator.Services.Interfaces;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+{
+	Args = args,
+	WebRootPath = "frontend"
+});
 
 builder.Services.AddTransient<IRevenueCalculatorService, RevenueCalculatorService>();
 builder.Services.AddTransient<IRateProvider, RateProvider>();
@@ -29,8 +33,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+	app.UseHttpsRedirection();
 }
-app.UseHttpsRedirection();
+else
+{
+	app.UseDefaultFiles();
+	app.UseStaticFiles();
+}
 
 app.UseAuthorization();
 

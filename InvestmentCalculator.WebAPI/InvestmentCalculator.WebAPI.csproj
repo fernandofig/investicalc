@@ -1,26 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>d8c0d8d3-8d7d-4998-b2eb-7af4c54fb656</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
+	
+	<ItemGroup>
+	  <_WebToolingArtifacts Remove="Properties\PublishProfiles\ContainerProfile.pubxml" />
+	  <_WebToolingArtifacts Remove="Properties\PublishProfiles\LocalProfile.pubxml" />
+	</ItemGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<ItemGroup>
+		<InternalsVisibleTo Include="InvestmentCalculator.Tests" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <InternalsVisibleTo Include ="InvestmentCalculator.Tests"/>
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\InvestmentCalculator.Domain\InvestmentCalculator.Domain.csproj" />
-    <ProjectReference Include="..\InvestmentCalculator.Infrastructure\InvestmentCalculator.Infrastructure.csproj" />
-    <ProjectReference Include="..\InvestmentCalculator.Services\InvestmentCalculator.Services.csproj" />
-  </ItemGroup>
-
+	<ItemGroup>
+		<ProjectReference Include="..\InvestmentCalculator.Domain\InvestmentCalculator.Domain.csproj" />
+		<ProjectReference Include="..\InvestmentCalculator.Infrastructure\InvestmentCalculator.Infrastructure.csproj" />
+		<ProjectReference Include="..\InvestmentCalculator.Services\InvestmentCalculator.Services.csproj" />
+	</ItemGroup>
 </Project>
